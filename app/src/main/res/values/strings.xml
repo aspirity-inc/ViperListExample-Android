@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ViperListExample</string>
+    <string name="list_fragment_title">Images</string>
+    <string name="error">Oops! Something unexpected happened!</string>
+</resources>

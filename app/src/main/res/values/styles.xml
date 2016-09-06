@@ -1,0 +1,50 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <item name="toolbarStyle">@style/Toolbar.Color</item>
+    </style>
+
+    <style name="AppTheme.Details" parent="AppTheme.Base">
+        <item name="toolbarStyle">@style/Toolbar.Transparent</item>
+    </style>
+
+    <style name="AppTheme.Base" parent="carbon_Theme.Dark.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarNavigationButtonStyle">@style/NavigationButton</item>
+    </style>
+
+    <style name="Toolbar.Color" parent="Toolbar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="contentInsetStart">@dimen/first_keyline</item>
+    </style>
+
+    <style name="Toolbar.Transparent" parent="Toolbar">
+        <item name="android:background">@color/transparent</item>
+        <item name="contentInsetStart">@dimen/second_keyline</item>
+    </style>
+
+    <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="colorControlHighlight">@color/white_e6</item>
+        <item name="maxButtonHeight">48dp</item>
+        <item name="android:minHeight">?actionBarSize</item>
+        <item name="android:paddingLeft">@dimen/toolbar_h_padding</item>
+        <item name="android:paddingRight">@dimen/toolbar_h_padding</item>
+        <item name="popupTheme">@style/Theme.AppCompat.Light</item>
+        <item name="titleTextAppearance">@style/TitleText</item>
+    </style>
+
+    <style name="TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white_e6</item>
+    </style>
+
+    <style name="NavigationButton" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">48dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <color name="transparent">#00000000</color>
+</resources>

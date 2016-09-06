@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:orientation="vertical"
+    app:carbon_rippleColor="@color/black_33"
+    app:carbon_rippleStyle="over"
+    app:carbon_cornerRadius="2dp"
+    app:carbon_elevation="4dp">
+
+    <carbon.widget.ImageView
+        android:id="@+id/card_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_alignParentTop="true" />
+
+    <carbon.widget.TextView
+        android:id="@+id/card_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/card_item_image"
+        android:background="@color/white"
+        android:gravity="center"
+        android:textColor="@color/black_e6"
+        app:carbon_fontPath="Roboto-Regular.ttf"
+        tools:text="flaeignirhmir" />
+
+</carbon.widget.CardView>
