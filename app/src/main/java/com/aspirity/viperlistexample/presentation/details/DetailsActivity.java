@@ -27,40 +27,23 @@ import carbon.widget.ProgressBar;
 @Layout(R.layout.activity_details)
 public class DetailsActivity extends BaseActivity {
 
-    @Bind(R.id.details_image)
-    ImageView imageView;
-
-    @Bind(R.id.progress)
-    ProgressBar progressBar;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Intent intent = getIntent();
         String url = intent.getStringExtra(MainActivity.IMAGE_URL);
         String title = intent.getStringExtra(MainActivity.IMAGE_TITLE);
-        if (title != null)
-            getSupportActionBar().setTitle(title);
-        if (url != null) {
-            Glide.with(this).load(url).listener(new RequestListener<String, GlideDrawable>() {
-                @Override
-                public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                    progressBar.setVisibility(View.GONE);
-                    Toast.makeText(DetailsActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
-                    return false;
-                }
 
-                @Override
-                public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target,
-                                               boolean isFromMemoryCache, boolean isFirstResource) {
-                    progressBar.setVisibility(View.GONE);
-                    return false;
-                }
-            }).into(imageView);
-        }
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(title);
+        toolbar.setNavigationOnClickListener(v -> finish());
+
+        displayFragment(PhoneDetailsFragment.newInstance(url), R.id.frame_container, true);
     }
-
-
 }

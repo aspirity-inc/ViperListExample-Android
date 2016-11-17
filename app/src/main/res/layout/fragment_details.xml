@@ -7,11 +7,17 @@
     android:fitsSystemWindows="true"
     app:carbon_insetColor="@color/black">
 
-    <include layout="@layout/toolbar" />
+    <carbon.widget.ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        app:carbon_progressStyle="circular_indeterminate" />
 
-    <carbon.widget.FrameLayout
-        android:id="@+id/frame_container"
+    <carbon.widget.ImageView
+        android:id="@+id/details_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scaleType="centerInside" />
 
 </carbon.widget.RelativeLayout>
